@@ -1,0 +1,34 @@
+1. Create a Maven project
+or
+Create a Java Project and convert into Maven Project (Right Click -> Configure -> Maven Project)
+
+2. Add Spring JPA dependency for JDBC Drivers in pom.xml :
+
+<dependency>
+  <groupId>org.springframework.data</groupId>
+  <artifactId>spring-data-jpa</artifactId>
+  <version>1.7.1.RELEASE</version>
+</dependency>
+
+3. Add Postgres dependency for JDBC drivers pom.xml :
+
+<dependency>
+  <groupId>org.postgresql</groupId>
+  <artifactId>postgresql</artifactId>
+  <version>9.4-1200-jdbc4</version>
+</dependency>
+
+4. Create Spring-config.xml file and add :
+ (a) bean of data source
+ (b) bean of DAO
+ 
+ Or
+ 
+ Create two different xmls of data source bean and DAO bean and create a third xml, import other two in it.
+ 
+5. In main app :
+
+ApplicationContext context = 
+    		new ClassPathXmlApplicationContext("Spring-Config.xml");
+
+6. Inzoy    	
