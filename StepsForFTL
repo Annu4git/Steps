@@ -1,0 +1,53 @@
+How to use FTL :
+
+We want following files :
+1. One class for processing the template.
+2. The class from where we load the template (generally 1 and 2 are same)
+3. One .ftl file
+
+1. package com.mongodb;
+
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+
+public class HelloWorldFTLStyle {
+
+	public static void main(String[] args) {
+		Configuration configuration = new Configuration();
+		configuration.setClassForTemplateLoading(HelloWorldFTLStyle.class, "/");
+		
+		try {
+			Template helloTemplate = configuration.getTemplate("helloTemplate.ftl");
+			StringWriter writer = new StringWriter();
+			Map<String, Object> helloMap = new HashMap<String, Object>();
+			helloMap.put("name", "FTL");
+			
+			helloTemplate.process(helloMap, writer);
+			System.out.println(writer);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
+		
+	2. Template file :
+	
+	<html>
+	<head>
+		<title>FTL</title>
+	</head>
+	
+	<body>
+		<h1> Hello ${name}</h1>
+	</body>
+</html>
+		
+		
