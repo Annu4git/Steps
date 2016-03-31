@@ -1,3 +1,5 @@
+//Refer to http://devcrumb.com/hibernate/spring-data-jpa-hibernate-maven
+
 1. Create a Maven project
 or
 Create a Java Project and convert into Maven Project (Right Click -> Configure -> Maven Project)
@@ -32,3 +34,6 @@ ApplicationContext context =
     		new ClassPathXmlApplicationContext("Spring-Config.xml");
 
 6. Inzoy    	
+
+
+//Refer to http://devcrumb.com/hibernate/spring-data-jpa-hibernate-maven
